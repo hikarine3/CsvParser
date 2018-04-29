@@ -1,5 +1,17 @@
 # What is this
-Simple CSV parser
+Simple CSV parser for PHP
+
+# How to install it
+
+add 
+```
+    "require": {
+        ...
+        "hikarine3/csv-parser": "*",
+        ...
+    }
+```
+to composer.json
 
 # Example: First line will be used as key
 
