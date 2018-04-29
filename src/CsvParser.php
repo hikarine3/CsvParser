@@ -38,7 +38,7 @@ print_r($data);
 			$this->file = $op['file'];
 			print($this->file);
         }
-        if( !defined($this->delimiter) ) {
+        if( empty($this->delimiter) ) {
             $this->delimiter = ',';
         }
         if( empty($this->file) ) {
@@ -60,11 +60,16 @@ print_r($data);
 		$headers = str_getcsv( array_shift( $lines ), $this->delimiter );
 		$data = [];
 		foreach ( $lines as $line ) {
-		$row = [];
-		foreach ( str_getcsv( $line, $this->delimiter ) as $key => $field )
-			$row[ $headers[ $key ] ] = $field;
+			$row = [];
+			foreach ( str_getcsv( $line, $this->delimiter ) as $key => $field ) {
+				if (isset($headers[ $key ] )) {
+					$row[ $headers[ $key ] ] = $field;
+				}
+			}
 			$row = array_filter( $row );
-			$data[] = $row;
+			if(!empty($row)) {
+				$data[] = $row;
+			}
 		}
 		return $data;
 	}

@@ -11,9 +11,9 @@
         }
     ],
     "autoload": {
-        "psr-4": {
-            "Hikarine3\\CsvParser\\": "src/",
-            "Hikarine3\\Tests\\": "tests/"
+        "psr-0": {
+            "Hikarine3\\CsvParser": "src/CsvParser.php",
+            "Hikarine3\\Tests": "tests/CsvParser/CsvParserTest.php"
         }
     },
     "require": {
