@@ -1,4 +1,5 @@
 <?php
+require_once( __DIR__ . '/../../src/CsvParser.php' );
 use PHPUnit\Framework\TestCase;
 use Hikarine3\CsvParser;
 
@@ -16,11 +17,13 @@ class CsvParserTest extends TestCase
 
     public function testParse() {
         $this->parser = new CsvParser;
-        $datas = $this->parser->parse(['file' => 'tests/Hikarine3/CsvParser/test_input.csv']);
+        $datas = $this->parser->parse(['file' => __DIR__ .'/test_input.csv']);
         $this->assertEquals( $datas[0]['column1'] , 'japan');
         $this->assertEquals( $datas[0]['column2'] , 'JP');
         $this->assertEquals( $datas[1]['column1'] , 'usa');
         $this->assertEquals( $datas[1]['column2'] , 'US');
+        $this->assertEquals( $datas[2]['column1'] , 'china');
+        $this->assertEquals( $datas[2]['column2'] , 'CN');
     }
 }
 
