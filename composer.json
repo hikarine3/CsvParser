@@ -1,6 +1,5 @@
 {
     "name": "hikarine3/csv-parser",
-    "version": "0.1",
     "description": "CSV Parser Library for PHP",
     "homepage": "https://github.com/hikarine3/CsvParser",
     "keywords": ["csv", "tsv", "parser"],
