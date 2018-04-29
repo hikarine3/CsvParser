@@ -18,6 +18,9 @@ class CsvParserTest extends TestCase
         $this->parser = new CsvParser;
         $datas = $this->parser->parse(['file' => 'tests/Hikarine3/CsvParser/test_input.csv']);
         $this->assertEquals( $datas[0]['column1'] , 'japan');
+        $this->assertEquals( $datas[0]['column2'] , 'JP');
+        $this->assertEquals( $datas[1]['column1'] , 'usa');
+        $this->assertEquals( $datas[1]['column2'] , 'US');
     }
 }
 
