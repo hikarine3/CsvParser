@@ -12,9 +12,9 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Hikarine3\\CsvParser": "src/",
-            "Hikarine3\\Tests": "tests/"
+        "psr-4": {
+            "Hikarine3\\CsvParser\\": "src/",
+            "Hikarine3\\Tests\\": "tests/"
         }
     },
     "require": {
