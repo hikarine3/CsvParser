@@ -10,7 +10,8 @@ class CsvParser
 	private $file = "";
 	private $delimiter = "";
 
-	public function show_help() {
+	public function show_help() 
+	{
 		print 'Showing Usage becaused this program is executed as a stand alone script: 
 # First line will be used as key
 $file = "input.csv";
@@ -21,27 +22,27 @@ print_r($data);
 ';
 	}
 
-	public function __construct($op = null) {
-		if(isset($op['delimiter'])) {
+	public function __construct($op = null) 
+	{
+		if (isset($op['delimiter'])) {
 			$this->delimiter = $op['delimiter'];
 		}
-		if(isset($op['file'])) {
+		if (isset($op['file'])) {
 			$this->file = $op['file'];
 		}
 	}
 
 	public function parse($op = null) {
-		if(isset($op['delimiter'])) {
+		if (isset($op['delimiter'])) {
 			$this->delimiter = $op['delimiter'];
 		}
-		if(isset($op['file'])) {
+		if (isset($op['file'])) {
 			$this->file = $op['file'];
-			print($this->file);
         }
-        if( empty($this->delimiter) ) {
+        if ( empty($this->delimiter) ) {
             $this->delimiter = ',';
         }
-        if( empty($this->file) ) {
+        if ( empty($this->file) ) {
             error_log("Please specify file as a parameter");
             exit;
         }
@@ -49,7 +50,7 @@ print_r($data);
 		$lines = array_filter(
 			explode( "\n", file_get_contents( $this->file ) ),
 			function($line) {
-				if(preg_match('/^#/', $line)) {
+				if (preg_match('/^#/', $line)) {
 					return false;
 				}
 				else {
@@ -67,7 +68,7 @@ print_r($data);
 				}
 			}
 			$row = array_filter( $row );
-			if(!empty($row)) {
+			if (!empty($row)) {
 				$data[] = $row;
 			}
 		}
@@ -75,7 +76,7 @@ print_r($data);
 	}
 }
 
-if(empty(debug_backtrace())){
+if (empty(debug_backtrace())) {
 	// This part is executed when this PHP is executed directly
     $parser = new CsvParser();
     $parser->show_help();
