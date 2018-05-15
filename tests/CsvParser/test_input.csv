@@ -1,4 +1,4 @@
-column1,column2
+"column1",column2,"column3"
 japan,JP
-usa,US
+usa,"US"
 china,CN
