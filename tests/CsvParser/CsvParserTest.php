@@ -22,6 +22,7 @@ class CsvParserTest extends TestCase
         $this->assertEquals( $datas[0]['column2'] , 'JP');
         $this->assertEquals( $datas[1]['column1'] , 'usa');
         $this->assertEquals( $datas[1]['column2'] , 'US');
+        $this->assertEquals( $datas[1]['column4'] , 'america');
         $this->assertEquals( $datas[2]['column1'] , 'china');
         $this->assertEquals( $datas[2]['column2'] , 'CN');
     }
