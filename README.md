@@ -1,5 +1,9 @@
 # What is this
-Simple CSV parser for PHP
+Simple CSV parser for PHP.
+Return characters will be converted into
+```
+<br />
+```
 
 # How to install it
 

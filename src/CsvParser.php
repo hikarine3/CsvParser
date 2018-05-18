@@ -46,9 +46,13 @@ print_r($data);
             error_log("Please specify file as a parameter");
             exit;
         }
-        
+		$con = file_get_contents( $this->file );
+		$con = preg_replace_callback('/\"([^\"]*?)\"/s', function($matches) {
+			$part = $matches[1];
+			return '"'.preg_replace("/\n/s", "<br />", $part).'"';
+		}, $con );
 		$lines = array_filter(
-			explode( "\n", file_get_contents( $this->file ) ),
+			explode( "\n", $con ),
 			function($line) {
 				if (preg_match('/^#/', $line)) {
 					return false;
