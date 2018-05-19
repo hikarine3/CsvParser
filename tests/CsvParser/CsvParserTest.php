@@ -27,6 +27,7 @@ class CsvParserTest extends TestCase
         $this->assertEquals( $datas[2]['column2'] , 'CN');
         $this->assertEquals( $datas[3]['column1'] , 'russia');
         $this->assertEquals( $datas[3]['column2'] , 'Russia<br />Country');
+        $this->assertEquals( $datas[3]['column3'] , 0);
 
         $datas = $this->parser->parse(['file' => __DIR__ .'/test_input2.csv']);
         $this->assertEquals( $datas[0]['tourSpotId'] , 'tourspots[0]');

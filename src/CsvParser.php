@@ -67,12 +67,12 @@ print_r($data);
 		foreach ( $lines as $line ) {
 			$row = [];
 			foreach ( str_getcsv( $line, $this->delimiter ) as $key => $field ) {
-				if (isset($headers[ $key ] )) {
+				if (isset($headers[ $key ] ) && strlen($field) ) {
 					$row[ $headers[ $key ] ] = $field;
 				}
 			}
-			$row = array_filter( $row );
-			if (!empty($row)) {
+			$row = array_filter( $row, function($var) {if(isset($var)) {return True;} } );
+			if (isset($row)) {
 				$data[] = $row;
 			}
 		}
