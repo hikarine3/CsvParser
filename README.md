@@ -84,7 +84,7 @@ Hajime Kurita
 - EN: https://en.sakuhindb.com/pe/Administrator/
 - JP: https://sakuhindb.com/pj/6_B4C9CDFDBFCDA4B5A4F3/
 
-## Techincal web services / 提供してる技術関連Webサービス / Techincoal Web服务
+## Technical web services / 提供してる技術関連Webサービス / 技术网络服务
 ### VPS & Infra comparison / VPS比較 / VPS比较
 - EN: https://vpsranking.com/en/
 - CN: https://vpsranking.com/zh/
